@@ -64,7 +64,7 @@ The `coco` and `Market-1501-v15.09.15_ps_label` can be downloaded from [Baidu Cl
 To prepare `occ_duke`,
 - First, generate `Occluded_Duke` following https://github.com/lightas/Occluded-DukeMTMC-Dataset. The result should be placed under `${project_dir}/dataset/occ_duke`, with structure
   - ${project_dir}/dataset/occ_duke
-    - Occluded_Duke_ps_label
+    - Occluded_Duke
       - bounding_box_train
       - query
       - bounding_box_test
@@ -130,7 +130,7 @@ Ablation study can be found in `script/train_hpnet.sh`.
 # Test with Single-gallery-shot Setting
 
 The score in Table 2 of the paper is calculated with single-gallery-shot setting. For this purpose, you can uncomment this line `get_scores_str = get_scores_str_r1_r3` in `package/eval/eval_feat.py` and then set the following three items in config file
-```
+```python
 cfg.eval.separate_camera_set = True
 cfg.eval.single_gallery_shot = True
 cfg.eval.first_match_break = False
